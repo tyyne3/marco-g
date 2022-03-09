@@ -8,7 +8,8 @@ const port = 5000
 app.use(express.static('public'))
 
 // Templating Engine
-//app.set('views', 'public/index.html')
+app.set('views', 'public/index.html')
 
 // Listen on port 5000
-app.listen(port, () => console.log(`Listening on port ${port}`))
+app.listen(process.env.PORT || 5000);
+
