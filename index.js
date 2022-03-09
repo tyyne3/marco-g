@@ -1,8 +1,14 @@
-const express = require("express");
-const app = express();
+const express = require('express')
+const bodyParser = require('body-parser')
 
-app.get("/",function (req,res){
-    res.send("Working");
-});
+const app = express()
+const port = 5000
 
-app.listen(process.env.PORT || 5000);
+// Static Files
+app.use(express.static('public'))
+
+// Templating Engine
+//app.set('views', 'public/index.html')
+
+// Listen on port 5000
+app.listen(port, () => console.log(`Listening on port ${port}`))
